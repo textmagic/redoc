@@ -48,7 +48,9 @@ export class AppStore {
   static fromJS(state: StoreState): AppStore {
     const inst = new AppStore(state.spec.data, state.spec.url, state.options, false);
     inst.menu.activeItemIdx = state.menu.activeItemIdx || 0;
-    inst.menu.activate(inst.menu.flatItems[inst.menu.activeItemIdx]);
+    inst.menu.activate(inst.menu.flatItems[inst.menu.activeItemIdx], () => {
+        alert('FROM JS');
+    });
     if (!inst.options.disableSearch) {
       inst.search!.load(state.searchIndex);
     }
@@ -76,7 +78,7 @@ export class AppStore {
     this.scroll = new ScrollService(this.options);
 
     // update position statically based on hash (in case of SSR)
-    MenuStore.updateOnHistory(history.currentId, this.scroll);
+    //MenuStore.updateOnHistory(history.currentId, this.scroll);
 
     this.spec = new SpecStore(spec, specUrl, this.options);
     this.menu = new MenuStore(this.spec, this.scroll, history);

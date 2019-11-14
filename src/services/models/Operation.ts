@@ -41,6 +41,7 @@ export class OperationModel implements IMenuItem {
   description?: string;
   type = 'operation' as 'operation';
 
+  isVisible: boolean;
   parent?: GroupModel;
   externalDocs?: OpenAPIExternalDocumentation;
   items: ContentItemModel[] = [];

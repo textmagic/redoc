@@ -14,6 +14,7 @@ export type MenuItemType = MenuItemGroupType | 'operation';
 /** Generic interface for MenuItems */
 export interface IMenuItem {
   id: string;
+  isVisible: boolean;
   absoluteIdx?: number;
   name: string;
   description?: string;
@@ -63,6 +64,7 @@ export class MenuStore {
 
   items: IMenuItem[];
   flatItems: IMenuItem[];
+  onChangeActiveScreenCallback: (id: string) => void;
 
   /**
    * cached flattened menu items to support absolute indexing
@@ -83,6 +85,10 @@ export class MenuStore {
 
     this.subscribe();
   }
+
+  setOnChangeActiveScreenCallback = (cb: (id: string) => void) => {
+      this.onChangeActiveScreenCallback = cb;
+  };
 
   subscribe() {
     this._unsubscribe = this.scroll.subscribe(this.updateOnScroll);
@@ -117,7 +123,8 @@ export class MenuStore {
 
       if (isScrolledDown) {
         const el = this.getElementAtOrFirstChild(itemIdx + 1);
-        if (this.scroll.isElementBellow(el)) {
+
+        if (!el || this.scroll.isElementBellow(el)) {
           break;
         }
       } else {
@@ -129,7 +136,7 @@ export class MenuStore {
       itemIdx += step;
     }
 
-    this.activate(this.flatItems[itemIdx], true, true);
+    this.activate(this.flatItems[itemIdx], this.onChangeActiveScreenCallback, true, true);
   };
 
   /**
@@ -137,6 +144,7 @@ export class MenuStore {
    * @param id current hash
    */
   updateOnHistory = (id: string = this.history.currentId) => {
+
     if (!id) {
       return;
     }
@@ -148,7 +156,7 @@ export class MenuStore {
     } else {
       if (id.startsWith(SECURITY_SCHEMES_SECTION_PREFIX)) {
         item = this.flatItems.find(i => SECURITY_SCHEMES_SECTION_PREFIX.startsWith(i.id));
-        this.activate(item);
+        this.activate(item, this.onChangeActiveScreenCallback);
       }
       this.scroll.scrollIntoViewBySelector(`[${SECTION_ATTR}="${id}"]`);
     }
@@ -172,6 +180,7 @@ export class MenuStore {
     if (item && item.type === 'group') {
       item = item.items[0];
     }
+
     return (item && querySelector(`[${SECTION_ATTR}="${item.id}"]`)) || null;
   }
 
@@ -189,12 +198,14 @@ export class MenuStore {
   /**
    * activate menu item
    * @param item item to activate
+   * @param onChangeActiveScreen
    * @param updateLocation [true] whether to update location
    * @param rewriteHistory [false] whether to rewrite browser history (do not create new enrty)
    */
   @action
   activate(
     item: IMenuItem | undefined,
+    onChangeActiveScreen: (id: string) => void,
     updateLocation: boolean = true,
     rewriteHistory: boolean = false,
   ) {
@@ -222,6 +233,8 @@ export class MenuStore {
     if (updateLocation) {
       this.history.replace(item.id, rewriteHistory);
     }
+
+    onChangeActiveScreen(item.id);
 
     item.activate();
     item.expand();
@@ -254,11 +267,13 @@ export class MenuStore {
   ) {
     // item here can be a copy from search results so find corresponding item from menu
     const menuItem = (item && this.getItemById(item.id)) || item;
-    this.activate(menuItem, updateLocation, rewriteHistory);
-    this.scrollToActive();
-    if (!menuItem || !menuItem.items.length) {
-      this.closeSidebar();
-    }
+    this.activate(menuItem, this.onChangeActiveScreenCallback, updateLocation, rewriteHistory);
+    setTimeout(() => {
+        this.scrollToActive();
+        if (!menuItem || !menuItem.items.length) {
+            this.closeSidebar();
+        }
+    }, 1);
   }
 
   /**

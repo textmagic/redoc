@@ -21,7 +21,6 @@ export interface SearchBoxProps {
   marker: MarkerService;
   getItemById: (id: string) => IMenuItem | undefined;
   onActivate: (item: IMenuItem) => void;
-
   className?: string;
 }
 

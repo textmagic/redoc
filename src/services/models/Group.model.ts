@@ -17,6 +17,7 @@ export class GroupModel implements IMenuItem {
   description?: string;
   type: MenuItemGroupType;
 
+  isVisible: boolean;
   items: ContentItemModel[] = [];
   parent?: GroupModel;
   externalDocs?: OpenAPIExternalDocumentation;
