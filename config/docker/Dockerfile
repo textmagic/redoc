@@ -20,9 +20,8 @@ COPY src /build/src
 COPY webpack.config.ts tsconfig.json custom.d.ts /build/
 COPY typings/styled-patch.d.ts /build/typings/styled-patch.d.ts
 COPY swagger.json /build/swagger.json
-COPY .git /build/.git
 
-RUN npm run bundle:standalone && rm -rf /build/.git
+RUN npm run bundle:standalone
 
 FROM nginx:alpine
 
@@ -34,7 +33,7 @@ ENV REDOC_OPTIONS=
 # copy files to the nginx folder
 COPY --from=0 build/bundles /usr/share/nginx/html
 COPY config/docker/index.tpl.html /usr/share/nginx/html/index.html
-COPY demo/favicon.png /usr/share/nginx/html/
+COPY demo/favicon.png swagger.json /usr/share/nginx/html/
 COPY config/docker/nginx.conf /etc/nginx/
 COPY config/docker/docker-run.sh /usr/local/bin
 
