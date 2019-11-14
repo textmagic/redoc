@@ -11,40 +11,6 @@
       padding: 0;
     }
 
-    redoc {
-      display: block;
-    }
-
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-        height: 80px;
-    }
-
-    .App-header {
-        background-color: #222;
-        height: 150px;
-        padding: 20px;
-        color: white;
-        text-align: center;
-    }
-
-    .App-title {
-        font-size: 1.5em;
-    }
-
-    .App-intro {
-        font-size: large;
-    }
-
-    @keyframes App-logo-spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
     .try-sandbox-link {
         padding-left: 16px;
         padding-right: 16px;
@@ -180,8 +146,107 @@
 </head>
 
 <body>
-  <redoc spec-url="/swagger.json" %REDOC_OPTIONS%></redoc>
+  <div id="redoc-container"></div>
   <script src="redoc.standalone.js"></script>
+  <script>
+      let options = {
+          theme: {
+              jsonSampleExpandLevel: 0,
+              spacing: {
+                  unit: 2,
+                  sectionHorizontal: ({spacing}) => spacing.unit * 16,
+                  sectionVertical: ({spacing}) => spacing.unit * 2,
+              },
+
+              typography: {
+                  fontSize: '14px',
+                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              },
+              menu: {
+                  width: '260px',
+                  backgroundColor: '#fafafa',
+                  textColor: '#333333',
+                  groupItems: {
+                      textTransform: 'uppercase',
+                      textColor: 'red',
+                  },
+                  level1Items: {
+                      textTransform: 'none',
+                  },
+              },
+              colors: {
+                  tonalOffset: 0.0,
+                  primary: {
+                      main: '#025d86',
+                      light: '#025d86',
+                      dark: '#025d86',
+                      contrastText: '#025d86',
+                  },
+                  success: {
+                      main: '#00aa13',
+                      // light: ({ colors }) => lighten(colors.tonalOffset, colors.success.main),
+                      // dark: ({ colors }) => darken(colors.tonalOffset, colors.success.main),
+                      // contrastText: ({ colors }) => readableColor(colors.success.main),
+                  },
+                  warning: {
+                      main: '#d4ad03',
+                      // light: ({ colors }) => lighten(colors.tonalOffset, colors.warning.main),
+                      // dark: ({ colors }) => darken(colors.tonalOffset, colors.warning.main),
+                      contrastText: '#ffffff',
+                  },
+                  error: {
+                      main: '#e53935',
+                      // light: ({ colors }) => lighten(colors.tonalOffset, colors.error.main),
+                      // dark: ({ colors }) => darken(colors.tonalOffset, colors.error.main),
+                      // contrastText: ({ colors }) => readableColor(colors.error.main),
+                  },
+                  text: {
+                      primary: '#333333',
+                      // secondary: ({ colors }) => lighten(colors.tonalOffset, colors.text.primary),
+                  },
+                  border: {
+                      dark: 'rgba(0,0,0, 0.1)',
+                      light: '#ffffff',
+                  },
+                  responses: {
+                      success: {
+                          color: ({colors}) => colors.success.main,
+                          // backgroundColor: ({ colors }) => transparentize(0.9, colors.success.main),
+                      },
+                      error: {
+                          color: ({colors}) => colors.error.main,
+                          // backgroundColor: ({ colors }) => transparentize(0.9, colors.error.main),
+                      },
+                      redirect: {
+                          color: '#ffa500',
+                          // backgroundColor: ({ colors }) => transparentize(0.9, colors.responses.redirect.color),
+                      },
+                      info: {
+                          color: '#025d86',
+                          // backgroundColor: ({ colors }) => transparentize(0.9, colors.responses.info.color),
+                      },
+                  },
+                  http: {
+                      get: '#6bbd5b',
+                      post: '#248fb2',
+                      put: '#9b708b',
+                      options: '#d3ca12',
+                      patch: '#e09d43',
+                      delete: '#e27a7a',
+                      basic: '#999',
+                      link: '#31bbb6',
+                      head: '#c167e4',
+                  },
+              }
+          },
+          noAutoAuth: true,
+          menuToggle: true,
+          expandResponses: "all",
+          expandDefaultServerVariables: true
+      };
+
+      Redoc.init('/swagger.json', options, document.getElementById('redoc-container'))
+  </script>
 </body>
 
 </html>

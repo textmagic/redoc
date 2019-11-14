@@ -142,10 +142,16 @@ export class Redoc extends React.Component<RedocProps, MainState> {
         this.makeInvisibleItems(this.state.sections);
         let targetItem = this.findTargetItem(this.state.sections, id);
         let firstLevelParent = this.findFirstLevelParent(targetItem);
-        if(firstLevelParent.parent){
-            firstLevelParent.parent.isVisible = true;
+        if(firstLevelParent){
+            if(firstLevelParent.parent){
+                firstLevelParent.parent.isVisible = true;
+            }
+
+            this.makeVisibleItem(firstLevelParent);
+        } else {
+            this.makeVisibleItem(targetItem);
         }
-        this.makeVisibleItem(firstLevelParent);
+
     };
 
     onChangeActiveScreen = (id: string) => {
