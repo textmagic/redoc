@@ -18,6 +18,7 @@ RUN yarn install --frozen-lockfile --ignore-optional --ignore-scripts
 COPY src /build/src
 COPY webpack.config.ts tsconfig.json custom.d.ts /build/
 COPY typings/styled-patch.d.ts /build/typings/styled-patch.d.ts
+COPY swagger.json /build/
 
 RUN npm run bundle:standalone
 
@@ -25,7 +26,7 @@ FROM nginx:alpine
 
 ENV PAGE_TITLE="ReDoc"
 ENV PAGE_FAVICON="favicon.png"
-ENV SPEC_URL="http://petstore.swagger.io/v2/swagger.json"
+ENV SPEC_URL="/swagger.json"
 ENV PORT=80
 ENV REDOC_OPTIONS=
 
