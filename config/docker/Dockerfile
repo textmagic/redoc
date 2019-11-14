@@ -18,7 +18,7 @@ RUN yarn install --frozen-lockfile --ignore-optional --ignore-scripts
 COPY src /build/src
 COPY webpack.config.ts tsconfig.json custom.d.ts /build/
 COPY typings/styled-patch.d.ts /build/typings/styled-patch.d.ts
-COPY swagger.json /build/
+COPY swagger.json /build/swagger.json
 
 RUN npm run bundle:standalone
 
