@@ -11,7 +11,7 @@ RUN apk update && apk add --no-cache git
 
 # Install dependencies
 WORKDIR /build
-RUN git init .
+
 COPY package.json yarn.lock /build/
 RUN yarn install --frozen-lockfile --ignore-optional --ignore-scripts
 
@@ -20,9 +20,9 @@ COPY src /build/src
 COPY webpack.config.ts tsconfig.json custom.d.ts /build/
 COPY typings/styled-patch.d.ts /build/typings/styled-patch.d.ts
 COPY swagger.json /build/swagger.json
-#COPY .git /build/.git
+COPY .git /build/.git
 
-RUN npm run bundle:standalone
+RUN npm run bundle:standalone && rm -rf /build/.git
 
 FROM nginx:alpine
 
