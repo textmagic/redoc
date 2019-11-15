@@ -245,19 +245,8 @@
         expandDefaultServerVariables: true
     };
 
-    let loaded = false;
     Redoc.init('/swagger.json', options, document.getElementById('redoc-container'), () => {
-        loaded = true;
-        console.log('page loaded');
-
-        let script = document.createElement('script');
-        script.src = "https://buttons.github.io/buttons.js";
-        document.head.appendChild(script);
     }, () => {
-        if(!loaded){
-            return;
-        }
-
         console.log('content updated');
 
         let matches = document.querySelectorAll("[kind='field']");
