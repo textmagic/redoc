@@ -8,53 +8,53 @@ import { Redoc } from './Redoc/Redoc';
 import { StoreBuilder } from './StoreBuilder';
 
 export interface RedocStandaloneProps {
-  spec?: object;
-  specUrl?: string;
-  options?: RedocRawOptions;
-  onLoaded?: (e?: Error) => any;
+    spec?: object;
+    specUrl?: string;
+    options?: RedocRawOptions;
+    onLoaded?: (e?: Error) => any;
+    onPageLoaded?: () => any;
 }
 
 export class RedocStandalone extends React.PureComponent<RedocStandaloneProps> {
-  static propTypes = {
-    spec: (props, _, componentName) => {
-      if (!props.spec && !props.specUrl) {
-        return new Error(
-          `One of props 'spec' or 'specUrl' was not specified in '${componentName}'.`,
+    static propTypes = {
+        spec: (props, _, componentName) => {
+            if (!props.spec && !props.specUrl) {
+                return new Error(
+                    `One of props 'spec' or 'specUrl' was not specified in '${componentName}'.`,
+                );
+            }
+            return null;
+        },
+
+        specUrl: (props, _, componentName) => {
+            if (!props.spec && !props.specUrl) {
+                return new Error(
+                    `One of props 'spec' or 'specUrl' was not specified in '${componentName}'.`,
+                );
+            }
+            return null;
+        },
+        options: PropTypes.any,
+    };
+
+    render() {
+        const { spec, specUrl, options = {}, onLoaded, onPageLoaded } = this.props;
+        const hideLoading = options.hideLoading !== undefined;
+
+        const normalizedOpts = new RedocNormalizedOptions(options);
+
+        return (
+            <ErrorBoundary>
+                <StoreBuilder spec={spec} specUrl={specUrl} options={options} onLoaded={onLoaded} onPageLoaded={onPageLoaded}>
+                    {({ loading, store, onPageLoaded }) =>
+                        !loading ? (
+                            <Redoc store={store!} onPageLoaded={onPageLoaded} />
+                        ) : hideLoading ? null : (
+                            <Loading color={normalizedOpts.theme.colors.primary.main} />
+                        )
+                    }
+                </StoreBuilder>
+            </ErrorBoundary>
         );
-      }
-      return null;
-    },
-
-    specUrl: (props, _, componentName) => {
-      if (!props.spec && !props.specUrl) {
-        return new Error(
-          `One of props 'spec' or 'specUrl' was not specified in '${componentName}'.`,
-        );
-      }
-      return null;
-    },
-    options: PropTypes.any,
-    onLoaded: PropTypes.any,
-  };
-
-  render() {
-    const { spec, specUrl, options = {}, onLoaded } = this.props;
-    const hideLoading = options.hideLoading !== undefined;
-
-    const normalizedOpts = new RedocNormalizedOptions(options);
-
-    return (
-      <ErrorBoundary>
-        <StoreBuilder spec={spec} specUrl={specUrl} options={options} onLoaded={onLoaded}>
-          {({ loading, store }) =>
-            !loading ? (
-              <Redoc store={store!} />
-            ) : hideLoading ? null : (
-              <Loading color={normalizedOpts.theme.colors.primary.main} />
-            )
-          }
-        </StoreBuilder>
-      </ErrorBoundary>
-    );
-  }
+    }
 }

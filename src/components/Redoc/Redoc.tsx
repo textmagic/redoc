@@ -16,6 +16,7 @@ import {StoreProvider} from '../StoreBuilder';
 
 export interface RedocProps {
     store: AppStore;
+    onPageLoaded?: () => any;
 }
 
 interface MainState {
@@ -152,8 +153,8 @@ export class Redoc extends React.Component<RedocProps, MainState> {
             this.makeVisibleItem(targetItem);
         }
 
-        if(this.props.store.options.onPageUpdate){
-            this.props.store.options.onPageUpdate();
+        if(this.props.onPageLoaded){
+            this.props.onPageLoaded();
         }
 
     };
