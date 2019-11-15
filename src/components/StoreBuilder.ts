@@ -13,9 +13,8 @@ export interface StoreBuilderProps {
   options?: RedocRawOptions;
 
   onLoaded?: (e?: Error) => void;
-  onPageLoaded?: () => any;
 
-  children: (props: { loading: boolean; store?: AppStore, onPageLoaded?: () => any }) => any;
+  children: (props: { loading: boolean; store?: AppStore }) => any;
 }
 
 export interface StoreBuilderState {
@@ -98,8 +97,7 @@ export class StoreBuilder extends Component<StoreBuilderProps, StoreBuilderState
     const { loading, resolvedSpec } = this.state;
     return this.props.children({
       loading,
-      store: this.makeStore(resolvedSpec, specUrl, options),
-      onPageLoaded: this.props.onPageLoaded
+      store: this.makeStore(resolvedSpec, specUrl, options)
     });
   }
 }

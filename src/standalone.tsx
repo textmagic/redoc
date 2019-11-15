@@ -38,6 +38,7 @@ export function init(
   options: any = {},
   element: Element | null = querySelector('redoc'),
   callback?: (e?: Error) => void,
+  onPageLoadedCallback?: () => void,
 ) {
   if (element === null) {
     throw new Error('"element" argument is not provided and <redoc> tag is not found on the page');
@@ -58,6 +59,7 @@ export function init(
       {
         spec,
         onLoaded: callback,
+        onPageLoaded: onPageLoadedCallback,
         specUrl,
         options: { ...options, ...parseOptionsFromElement(element) },
       },
@@ -71,6 +73,7 @@ export function hydrate(
   state: StoreState,
   element: Element | null = querySelector('redoc'),
   callback?: () => void,
+  onPageLoadedCallback?: () => void,
 ) {
   debugTime('Redoc create store');
   const store = AppStore.fromJS(state);
@@ -78,7 +81,7 @@ export function hydrate(
 
   setTimeout(() => {
     debugTime('Redoc hydrate');
-    hydrateComponent(<Redoc store={store} />, element, callback);
+    hydrateComponent(<Redoc store={store} onPageLoaded={onPageLoadedCallback} />, element, callback);
     debugTimeEnd('Redoc hydrate');
   }, 0);
 }
