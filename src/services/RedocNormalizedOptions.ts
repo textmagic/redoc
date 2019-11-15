@@ -150,6 +150,7 @@ export class RedocNormalizedOptions {
   allowedMdComponents: Dict<MDXComponentMeta>;
 
   expandDefaultServerVariables: boolean;
+  onPageUpdate?: () => void;
 
   constructor(raw: RedocRawOptions, defaults: RedocRawOptions = {}) {
     raw = { ...defaults, ...raw };

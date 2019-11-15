@@ -242,10 +242,41 @@
           noAutoAuth: true,
           menuToggle: true,
           expandResponses: "all",
-          expandDefaultServerVariables: true
+          expandDefaultServerVariables: true,
+          onPageUpdate: () => {
+              console.log('content updated');
+
+              let matches = document.querySelectorAll("[kind='field']");
+              matches.forEach((el) => {
+                  if (el !== undefined && !el.clicked) {
+                      el.clicked = true;
+                      let e = new MouseEvent("click", {
+                          view: window,
+                          bubbles: true,
+                          cancelable: true
+                      });
+                      el.dispatchEvent(e);
+                  }
+              });
+
+              let links = document.links;
+
+              for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+                  if (links[i].hostname !== window.location.hostname) {
+                      links[i].target = '_blank';
+                  }
+              }
+              i++;
+          }
       };
 
-      Redoc.init('/swagger.json', options, document.getElementById('redoc-container'))
+      Redoc.init('/swagger.json', options, document.getElementById('redoc-container'), () => {
+          console.log('page loaded');
+
+          let script = document.createElement('script');
+          script.src = "https://buttons.github.io/buttons.js";
+          document.head.appendChild(script);
+      })
   </script>
 </body>
 

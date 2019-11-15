@@ -152,6 +152,10 @@ export class Redoc extends React.Component<RedocProps, MainState> {
             this.makeVisibleItem(targetItem);
         }
 
+        if(this.props.store.options.onPageUpdate){
+            this.props.store.options.onPageUpdate();
+        }
+
     };
 
     onChangeActiveScreen = (id: string) => {
