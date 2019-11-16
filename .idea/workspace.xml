@@ -1,22 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df70662-00e7-4900-9267-16efe7b1b70c" name="Default Changelist" comment="" />
+    <list default="true" id="81efd4da-a709-429f-a7bb-d1c21c1cccf5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/SearchBox/SearchResultList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Redoc/Redoc.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redoc/Redoc.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/SearchStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/SearchStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/SearchWorker.worker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/SearchWorker.worker.ts" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="104737625">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="ts" value="617" />
+          <entry key="tsx" value="1238" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="TypeScript" value="617" />
+          <entry key="TypeScript JSX" value="1238" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="json" value="2" />
+          <entry key="ts" value="23" />
+          <entry key="tsx" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="2" />
+          <entry key="TypeScript" value="23" />
+          <entry key="TypeScript JSX" value="10" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx">
+        <entry file="file://$PROJECT_DIR$/src/services/AppStore.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+            <state relative-caret-position="480">
+              <caret line="88" column="25" lean-forward="true" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -25,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/SearchStore.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+            <state relative-caret-position="453">
+              <caret line="72" column="45" lean-forward="true" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -37,17 +74,53 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/SearchWorker.worker.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+            <state relative-caret-position="206">
+              <caret line="48" column="65" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/MarkerService.ts">
+        <entry file="file://$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+            <state relative-caret-position="270">
+              <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/SearchBox/SearchResultList.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="769">
+              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ContentItems/ContentItems.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="69" selection-start-line="69" selection-end-line="70" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common-elements/panels.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -56,42 +129,42 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>items</find>
-      <find>Maximum</find>
-      <find>scroll</find>
-      <find>toggleSidebar</find>
-      <find>SectionItem</find>
-      <find>api-con</find>
-      <find>updateOnScroll</find>
-      <find>history change</find>
-      <find>subscri</find>
-      <find>activate</find>
-      <find>history cha</find>
-      <find>onChangeActiveScreen</find>
-      <find>Redoc</find>
-      <find>updateMarkOnMenu</find>
-      <find>scrollIntoViewBySelector</find>
-      <find>MenuStore</find>
-      <find>updateOnHistory</find>
-      <find>HZ</find>
-      <find>onActivate</find>
-      <find>activateAndScroll</find>
-      <find>MenuItems</find>
-      <find>onChangeActiveScreenCallback</find>
-      <find>console.log</find>
-      <find>Needed a single revision</find>
-      <find>REDOC_REVISION</find>
-      <find>REVISION</find>
       <find>onLoaded</find>
       <find>makeStore</find>
       <find>onPageLoad</find>
       <find>term</find>
+      <find>mobx</find>
+      <find>comp</find>
+      <find>action</find>
+      <find>toggleNavMenu</find>
+      <find>results</find>
+      <find>setRes</find>
+      <find>toggleSidebar</find>
+      <find>autorun</find>
+      <find>sideBarOpened</find>
+      <find>result</find>
+      <find>setResults</find>
+      <find>OperationModel</find>
+      <find>clearResults</find>
+      <find>state</find>
+      <find>clear</find>
+      <find>obser</find>
+      <find>SearchResultListProps</find>
+      <find>search</find>
+      <find>store</find>
+      <find>resolveIndex</find>
+      <find>field</find>
+      <find>Header</find>
+      <find>middlePanelWrap</find>
+      <find>getItemById</find>
+      <find>lunr</find>
+      <find>load</find>
     </findStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/src/components</dir>
+      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src/services</dir>
       <dir>$PROJECT_DIR$/src</dir>
-      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/components</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -114,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/services/AppStore.ts" />
         <option value="$PROJECT_DIR$/src/components/SideMenu/MenuItem.tsx" />
         <option value="$PROJECT_DIR$/src/components/SideMenu/MenuItems.tsx" />
-        <option value="$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx" />
         <option value="$PROJECT_DIR$/src/services/MenuStore.ts" />
         <option value="$PROJECT_DIR$/src/components/SideMenu/SideMenu.tsx" />
         <option value="$PROJECT_DIR$/demo/playground/index.html" />
@@ -124,14 +196,24 @@
         <option value="$PROJECT_DIR$/config/docker/docker-run.sh" />
         <option value="$PROJECT_DIR$/config/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/src/services/RedocNormalizedOptions.ts" />
-        <option value="$PROJECT_DIR$/src/components/Redoc/Redoc.tsx" />
         <option value="$PROJECT_DIR$/src/components/RedocStandalone.tsx" />
         <option value="$PROJECT_DIR$/src/components/StoreBuilder.ts" />
         <option value="$PROJECT_DIR$/src/standalone.tsx" />
         <option value="$PROJECT_DIR$/config/docker/index.tpl.html" />
+        <option value="$PROJECT_DIR$/src/components/SearchBox/SearchResults.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Redoc/Redoc.tsx" />
+        <option value="$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx" />
+        <option value="$PROJECT_DIR$/src/components/SearchBox/SearchResultList.tsx" />
+        <option value="$PROJECT_DIR$/src/services/SearchStore.ts" />
         <option value="$PROJECT_DIR$/src/services/SearchWorker.worker.ts" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1920" />
@@ -143,6 +225,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,16 +249,37 @@
               <item name="redoc-fork" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ContentItems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redoc-fork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redoc-fork" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Redoc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redoc-fork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redoc-fork" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="SearchBox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redoc-fork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redoc-fork" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="SideMenu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="worker&#9;FILE&#9;file:///private/var/www/redoc-fork/src/services/SearchWorker.worker.ts&#10;AppSto&#9;FILE&#9;file:///private/var/www/redoc-fork/src/services/AppStore.ts&#10;AppStore&#9;FILE&#9;file:///private/var/www/redoc-fork/src/services/AppStore.ts&#10;getItemById&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -187,6 +291,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/SearchBox" />
       <recent name="$PROJECT_DIR$/config/docker" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/demo" />
@@ -220,17 +325,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43131000" />
+    <option name="totallyTimeSpent" value="55733000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21086262" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25035766" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.25346535" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2759036" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" />
@@ -252,113 +357,66 @@
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/openapi.js" />
-        <option value="$PROJECT_DIR$/src/utils/memoize.js" />
-        <option value="$PROJECT_DIR$/src/utils/debug.js" />
-        <option value="$PROJECT_DIR$/src/utils/JsonPointer.js" />
-        <option value="$PROJECT_DIR$/src/utils/highlight.js" />
-        <option value="$PROJECT_DIR$/src/utils/loadAndBundleSpec.js" />
-        <option value="$PROJECT_DIR$/src/utils/dom.js" />
-        <option value="$PROJECT_DIR$/src/utils/decorators.js" />
-        <option value="$PROJECT_DIR$/src/services/SpecStore.js" />
-        <option value="$PROJECT_DIR$/src/services/Labels.js" />
-        <option value="$PROJECT_DIR$/src/utils/helpers.js" />
-        <option value="$PROJECT_DIR$/src/utils/index.js" />
-        <option value="$PROJECT_DIR$/src/services/RedocNormalizedOptions.js" />
-        <option value="$PROJECT_DIR$/src/services/index.js" />
-        <option value="$PROJECT_DIR$/src/services/OpenAPIParser.js" />
-        <option value="$PROJECT_DIR$/src/services/ScrollService.js" />
-        <option value="$PROJECT_DIR$/src/services/MarkdownRenderer.js" />
-        <option value="$PROJECT_DIR$/src/services/AppStore.js" />
-        <option value="$PROJECT_DIR$/src/services/HistoryService.js" />
-        <option value="$PROJECT_DIR$/src/services/SearchStore.js" />
-        <option value="$PROJECT_DIR$/src/services/MenuBuilder.js" />
-        <option value="$PROJECT_DIR$/src/services/MenuStore.js" />
-        <option value="$PROJECT_DIR$/src/services/ClipboardService.js" />
-        <option value="$PROJECT_DIR$/src/services/MarkerService.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/panels.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/headers.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/schema.js" />
-        <option value="$PROJECT_DIR$/src/services/SearchWorker.worker.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/tabs.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/mixins.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/fields-layout.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/dropdown.js" />
-        <option value="$PROJECT_DIR$/src/components/index.js" />
-        <option value="$PROJECT_DIR$/src/components/StoreBuilder.js" />
-        <option value="$PROJECT_DIR$/src/components/OptionsProvider.js" />
-        <option value="$PROJECT_DIR$/src/common-elements/index.js" />
-        <option value="$PROJECT_DIR$/src/theme.js" />
-        <option value="$PROJECT_DIR$/src/components/SideMenu/styled.elements.js" />
-        <option value="$PROJECT_DIR$/src/components/SideMenu/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Schema/index.js" />
+        <option value="$PROJECT_DIR$/src/services/models/Response.js" />
         <option value="$PROJECT_DIR$/src/services/models/Example.js" />
         <option value="$PROJECT_DIR$/src/services/models/Group.model.js" />
         <option value="$PROJECT_DIR$/src/services/models/index.js" />
-        <option value="$PROJECT_DIR$/src/styled-components.js" />
+        <option value="$PROJECT_DIR$/src/services/SearchWorker.worker.js" />
         <option value="$PROJECT_DIR$/src/services/models/SecurityRequirement.js" />
         <option value="$PROJECT_DIR$/src/services/models/MediaContent.js" />
         <option value="$PROJECT_DIR$/src/services/models/SecuritySchemes.js" />
-        <option value="$PROJECT_DIR$/src/services/models/Response.js" />
-        <option value="$PROJECT_DIR$/src/services/models/Field.js" />
         <option value="$PROJECT_DIR$/src/services/models/Schema.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/panels.js" />
         <option value="$PROJECT_DIR$/src/services/models/RequestBody.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/headers.js" />
         <option value="$PROJECT_DIR$/src/services/models/MediaType.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/schema.js" />
+        <option value="$PROJECT_DIR$/src/utils/JsonPointer.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/mixins.js" />
         <option value="$PROJECT_DIR$/src/services/models/Operation.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/fields-layout.js" />
         <option value="$PROJECT_DIR$/src/services/models/ApiInfo.js" />
-        <option value="$PROJECT_DIR$/cli/index.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/dropdown.js" />
+        <option value="$PROJECT_DIR$/src/services/models/Field.js" />
+        <option value="$PROJECT_DIR$/src/utils/decorators.js" />
+        <option value="$PROJECT_DIR$/src/components/OptionsProvider.js" />
+        <option value="$PROJECT_DIR$/src/components/SideMenu/styled.elements.js" />
+        <option value="$PROJECT_DIR$/src/utils/openapi.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/index.js" />
+        <option value="$PROJECT_DIR$/src/components/SideMenu/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/memoize.js" />
+        <option value="$PROJECT_DIR$/src/utils/debug.js" />
+        <option value="$PROJECT_DIR$/src/common-elements/tabs.js" />
+        <option value="$PROJECT_DIR$/src/components/index.js" />
+        <option value="$PROJECT_DIR$/src/components/StoreBuilder.js" />
+        <option value="$PROJECT_DIR$/src/utils/dom.js" />
+        <option value="$PROJECT_DIR$/src/theme.js" />
+        <option value="$PROJECT_DIR$/src/utils/helpers.js" />
+        <option value="$PROJECT_DIR$/src/utils/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/highlight.js" />
+        <option value="$PROJECT_DIR$/src/utils/loadAndBundleSpec.js" />
+        <option value="$PROJECT_DIR$/src/services/Labels.js" />
+        <option value="$PROJECT_DIR$/src/services/OpenAPIParser.js" />
+        <option value="$PROJECT_DIR$/src/services/ScrollService.js" />
+        <option value="$PROJECT_DIR$/src/services/SpecStore.js" />
+        <option value="$PROJECT_DIR$/src/services/HistoryService.js" />
+        <option value="$PROJECT_DIR$/src/services/SearchStore.js" />
+        <option value="$PROJECT_DIR$/src/services/RedocNormalizedOptions.js" />
+        <option value="$PROJECT_DIR$/src/services/index.js" />
+        <option value="$PROJECT_DIR$/src/services/ClipboardService.js" />
+        <option value="$PROJECT_DIR$/src/services/MarkerService.js" />
+        <option value="$PROJECT_DIR$/src/services/MarkdownRenderer.js" />
+        <option value="$PROJECT_DIR$/src/services/AppStore.js" />
+        <option value="$PROJECT_DIR$/src/services/MenuStore.js" />
+        <option value="$PROJECT_DIR$/src/styled-components.js" />
+        <option value="$PROJECT_DIR$/src/components/Schema/index.js" />
+        <option value="$PROJECT_DIR$/src/services/MenuBuilder.js" />
       </list>
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Operation/Operation.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/models/Operation.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/models/Group.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings/services/MenuBuilder.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/swagger.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret column="32599" selection-start-column="32599" selection-end-column="32599" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SelectOnClick/SelectOnClick.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common-elements/perfect-scrollbar.tsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -392,9 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="86" column="29" lean-forward="true" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -405,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common-elements/panels.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common-elements/linkify.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -419,76 +467,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StickySidebar/StickyResponsiveSidebar.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="150" column="33" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContentItems/ContentItems.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SideMenu/MenuItems.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/typings/components/SearchBox/SearchBox.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SideMenu/MenuItem.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SideMenu/SideMenu.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/MenuStore.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="255" column="3" selection-start-line="255" selection-start-column="3" selection-end-line="255" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/redoc.standalone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/components/SearchBox/SearchBox.d.ts" />
+    <entry file="file://$PROJECT_DIR$/bundles/redoc.standalone.js" />
     <entry file="file://$PROJECT_DIR$/demo/ssr/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -519,9 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1136">
           <caret line="153" column="3" lean-forward="true" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -536,9 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,13 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StoreBuilder.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/react-dom/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -578,16 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2085">
           <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Redoc/Redoc.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="74" column="86" selection-start-line="74" selection-start-column="86" selection-end-line="74" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -605,38 +569,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/AppStore.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="154" column="44" selection-start-line="154" selection-start-column="44" selection-end-line="154" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RedocStandalone.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/OptionsProvider.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/standalone.tsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -669,10 +603,152 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/StoreBuilder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="450" column="8" selection-start-line="450" selection-start-column="8" selection-end-line="450" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/models/Operation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="125" column="2" selection-start-line="125" selection-start-column="2" selection-end-line="125" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SideMenu/SideMenu.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/MenuStore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RedocStandalone.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Redoc/Redoc.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="81" column="65" lean-forward="true" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/StickySidebar/StickyResponsiveSidebar.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1250">
+          <caret line="134" column="12" lean-forward="true" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common-elements/panels.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContentItems/ContentItems.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="69" selection-start-line="69" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SideMenu/MenuItem.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-795">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SearchBox/SearchResultList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="769">
+          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="146" column="39" lean-forward="true" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/lunr/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/AppStore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="88" column="25" lean-forward="true" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+        <state relative-caret-position="270">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -681,8 +757,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/SearchStore.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        <state relative-caret-position="453">
+          <caret line="72" column="45" lean-forward="true" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -691,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/SearchWorker.worker.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        <state relative-caret-position="206">
+          <caret line="48" column="65" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
         </state>
       </provider>
     </entry>

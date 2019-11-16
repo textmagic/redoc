@@ -2,61 +2,46 @@ import * as React from 'react';
 
 import { IMenuItem } from '../../services/MenuStore';
 import { SearchStore } from '../../services/SearchStore';
-import { MenuItem } from '../SideMenu/MenuItem';
-
 import { MarkerService } from '../../services/MarkerService';
 import { SearchResult } from '../../services/SearchWorker.worker';
 
-import { PerfectScrollbarWrap } from '../../common-elements/perfect-scrollbar';
+// import { PerfectScrollbarWrap } from '../../common-elements/perfect-scrollbar';
 import {
   ClearIcon,
   SearchIcon,
   SearchInput,
-  SearchResultsBox,
+  // SearchResultsBox,
   SearchWrap,
 } from './styled.elements';
+import {observer} from "mobx-react";
 
 export interface SearchBoxProps {
   search: SearchStore<string>;
   marker: MarkerService;
-  getItemById: (id: string) => IMenuItem | undefined;
   onActivate: (item: IMenuItem) => void;
   className?: string;
 }
 
-export interface SearchBoxState {
-  results: SearchResult[];
-  term: string;
-  activeItemIdx: number;
-}
-
-export class SearchBox extends React.PureComponent<SearchBoxProps, SearchBoxState> {
-  activeItemRef: MenuItem | null = null;
+@observer
+export class SearchBox extends React.PureComponent<SearchBoxProps> {
 
   constructor(props) {
     super(props);
     this.state = {
-      results: [],
-      term: '',
       activeItemIdx: -1,
     };
   }
 
   clearResults(term: string) {
-    this.setState({
-      results: [],
-      term,
-    });
+    this.props.search.deactivate();
+    this.props.search.clearResults(term);
     this.props.marker.unmark();
   }
 
   clear = () => {
-    this.setState({
-      results: [],
-      term: '',
-      activeItemIdx: -1,
-    });
     this.props.marker.unmark();
+    this.props.search.deactivate();
+    this.props.search.clearResults('');
   };
 
   handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -64,37 +49,12 @@ export class SearchBox extends React.PureComponent<SearchBoxProps, SearchBoxStat
       // ESQ
       this.clear();
     }
-    if (event.keyCode === 40) {
-      // Arrow down
-      this.setState({
-        activeItemIdx: Math.min(this.state.activeItemIdx + 1, this.state.results.length - 1),
-      });
-      event.preventDefault();
-    }
-    if (event.keyCode === 38) {
-      // Arrow up
-      this.setState({
-        activeItemIdx: Math.max(0, this.state.activeItemIdx - 1),
-      });
-      event.preventDefault();
-    }
-    if (event.keyCode === 13) {
-      // enter
-      const activeResult = this.state.results[this.state.activeItemIdx];
-      if (activeResult) {
-        const item = this.props.getItemById(activeResult.meta);
-        if (item) {
-          this.props.onActivate(item);
-        }
-      }
-    }
+
   };
 
   setResults(results: SearchResult[], term: string) {
-    this.setState({
-      results,
-      term,
-    });
+    this.props.search.activate();
+    this.props.search.setResults(results, term);
     this.props.marker.mark(term);
   }
 
@@ -104,59 +64,27 @@ export class SearchBox extends React.PureComponent<SearchBoxProps, SearchBoxStat
       this.clearResults(q);
       return;
     }
-
-    this.setState({
-      term: q,
-    });
-
     this.props.search.search(event.target.value).then(res => {
       this.setResults(res, q);
     });
   };
 
   render() {
-    const { activeItemIdx } = this.state;
-    const results = this.state.results.map(res => ({
-      item: this.props.getItemById(res.meta)!,
-      score: res.score,
-    }));
+    // const { activeItemIdx } = this.state;
 
-    results.sort((a, b) => b.score - a.score);
+    //results.sort((a, b) => b.score - a.score);
 
     return (
       <SearchWrap role="search">
-        {this.state.term && <ClearIcon onClick={this.clear}>×</ClearIcon>}
+        {this.props.search.term && <ClearIcon onClick={this.clear}>×</ClearIcon>}
         <SearchIcon />
         <SearchInput
-          value={this.state.term}
+          value={this.props.search.term}
           onKeyDown={this.handleKeyDown}
           placeholder="Search..."
           type="text"
           onChange={this.search}
         />
-        {results.length > 0 && (
-          <PerfectScrollbarWrap
-            options={{
-              wheelPropagation: false,
-            }}
-          >
-            <SearchResultsBox data-role="search:results">
-              {results.map((res, idx) => (
-                <MenuItem
-                  item={Object.create(res.item, {
-                    active: {
-                      value: idx === activeItemIdx,
-                    },
-                  })}
-                  onActivate={this.props.onActivate}
-                  withoutChildren={true}
-                  key={res.item.id}
-                  data-role="search:result"
-                />
-              ))}
-            </SearchResultsBox>
-          </PerfectScrollbarWrap>
-        )}
       </SearchWrap>
     );
   }

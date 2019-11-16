@@ -1,8 +1,10 @@
-import { IS_BROWSER } from '../utils/';
-import { IMenuItem } from './MenuStore';
-import { OperationModel } from './models';
+import {IS_BROWSER} from '../utils/';
+import {IMenuItem} from './MenuStore';
+import {OperationModel} from './models';
 
-import Worker from './SearchWorker.worker';
+import Worker, {SearchResult} from './SearchWorker.worker';
+import {action, observable} from "mobx";
+// import {act} from "react-dom/test-utils";
 
 let worker: new () => Worker;
 
@@ -20,11 +22,61 @@ if (IS_BROWSER) {
 export class SearchStore<T> {
   searchWorker = new worker();
 
+  @observable isActive: boolean = false;
+
+  @observable results: SearchResult[] = [];
+
+  @observable term: string = '';
+
+  @action
+  setResults(results: SearchResult[], term: string) {
+    this.results = results;
+    this.term = term;
+  }
+
+  @action
+  clearResults(term: string) {
+    this.term = term;
+    this.results = [];
+  }
+
+  @action
+  activate() {
+    console.log('active');
+    this.isActive = true;
+  }
+
+  @action
+  deactivate() {
+    this.isActive = false;
+  }
+
+  beforeIndexFilters = () => {
+    return [
+      (item: string) => {
+        return item.replace(/```([\s\S.]*)```/g, '');
+      },
+      (item: string) => {
+        return item.replace(/<[^>]*>?/gm, '');
+      },
+      (item: string) => {
+        return item.replace(/###/g, '');
+      }
+    ];
+  };
+
   indexItems(groups: Array<IMenuItem | OperationModel>) {
     const recurse = items => {
       items.forEach(group => {
         if (group.type !== 'group') {
-          this.add(group.name, group.description || '', group.id);
+
+          let description = group.description || group.name;
+
+          this.beforeIndexFilters().forEach(filter => {
+            description = filter(description);
+          });
+
+          this.add(group.name, description, group.id);
         }
         recurse(group.items);
       });

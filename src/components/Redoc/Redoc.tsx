@@ -13,6 +13,8 @@ import {ApiContentWrap, BackgroundStub, RedocWrap} from './styled.elements';
 
 import {SearchBox} from '../SearchBox/SearchBox';
 import {StoreProvider} from '../StoreBuilder';
+import {observer} from "mobx-react";
+import {SearchResultList} from "../SearchBox/SearchResultList";
 
 export interface RedocProps {
     store: AppStore;
@@ -22,8 +24,10 @@ export interface RedocProps {
 interface MainState {
     i: number;
     sections: IMenuItem[];
+    searchMode: true
 }
 
+@observer
 export class Redoc extends React.Component<RedocProps, MainState> {
     constructor(props: RedocProps, context: any) {
         super(props, context);
@@ -33,7 +37,8 @@ export class Redoc extends React.Component<RedocProps, MainState> {
         this.state =
             {
                 i: 0,
-                sections: props.store.menu.items
+                sections: props.store.menu.items,
+                searchMode: true
             };
 
         this.changeActiveScreen(this.state.sections[0].id);
@@ -67,7 +72,6 @@ export class Redoc extends React.Component<RedocProps, MainState> {
                                     <SearchBox
                                         search={search!}
                                         marker={marker}
-                                        getItemById={menu.getItemById}
                                         onActivate={menu.activateAndScroll}
                                     />
                                 )) ||
@@ -75,7 +79,7 @@ export class Redoc extends React.Component<RedocProps, MainState> {
                                 <SideMenu menu={menu} onChangeActiveScreen={this.onChangeActiveScreen}/>
                             </StickyResponsiveSidebar>
                             <ApiContentWrap className="api-content">
-                                <ContentItems items={this.state.sections as any} i={this.state.i}/>
+                              {search && search.isActive ? <SearchResultList getItemById={menu.getItemById} term={search.term} results={search.results}/> : <ContentItems items={this.state.sections as any} i={this.state.i}/>}
                             </ApiContentWrap>
                             <BackgroundStub/>
                         </RedocWrap>
