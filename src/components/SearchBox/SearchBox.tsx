@@ -1,16 +1,14 @@
 import * as React from 'react';
 
-import { IMenuItem } from '../../services/MenuStore';
-import { SearchStore } from '../../services/SearchStore';
-import { MarkerService } from '../../services/MarkerService';
-import { SearchResult } from '../../services/SearchWorker.worker';
+import {IMenuItem} from '../../services/MenuStore';
+import {SearchStore} from '../../services/SearchStore';
+import {MarkerService} from '../../services/MarkerService';
+import {SearchResult} from '../../services/SearchWorker.worker';
 
-// import { PerfectScrollbarWrap } from '../../common-elements/perfect-scrollbar';
 import {
   ClearIcon,
   SearchIcon,
   SearchInput,
-  // SearchResultsBox,
   SearchWrap,
 } from './styled.elements';
 import {observer} from "mobx-react";
@@ -22,68 +20,71 @@ export interface SearchBoxProps {
   className?: string;
 }
 
+interface SearchBoxState {
+  term: string
+}
+
 @observer
-export class SearchBox extends React.PureComponent<SearchBoxProps> {
+export class SearchBox extends React.PureComponent<SearchBoxProps, SearchBoxState> {
 
   constructor(props) {
     super(props);
     this.state = {
-      activeItemIdx: -1,
+      term: ''
     };
   }
 
-  clearResults(term: string) {
-    this.props.search.deactivate();
-    this.props.search.clearResults(term);
-    this.props.marker.unmark();
-  }
-
-  clear = () => {
-    this.props.marker.unmark();
+  clearResults = () => {
+    this.setState({
+      term: ''
+    });
     this.props.search.deactivate();
     this.props.search.clearResults('');
+    this.props.marker.unmark();
   };
 
   handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.keyCode === 27) {
       // ESQ
-      this.clear();
+      this.clearResults();
     }
 
+    if (event.keyCode === 13) {
+      if(!this.state.term){
+        this.clearResults();
+        return;
+      }
+
+      this.props.search.search(this.state.term).then(res => {
+        this.setResults(res, this.state.term);
+      });
+    }
   };
 
   setResults(results: SearchResult[], term: string) {
+    window.scrollTo(0, 0);
     this.props.search.activate();
     this.props.search.setResults(results, term);
     this.props.marker.mark(term);
   }
 
-  search = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const q = event.target.value;
-    if (q.length < 3) {
-      this.clearResults(q);
-      return;
-    }
-    this.props.search.search(event.target.value).then(res => {
-      this.setResults(res, q);
-    });
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      term: event.target.value
+    })
   };
 
   render() {
-    // const { activeItemIdx } = this.state;
-
-    //results.sort((a, b) => b.score - a.score);
-
     return (
       <SearchWrap role="search">
-        {this.props.search.term && <ClearIcon onClick={this.clear}>×</ClearIcon>}
-        <SearchIcon />
+        {this.state.term && <ClearIcon onClick={this.clearResults}>×</ClearIcon>}
+        <SearchIcon/>
         <SearchInput
-          value={this.props.search.term}
+          value={this.state.term}
           onKeyDown={this.handleKeyDown}
           placeholder="Search..."
           type="text"
-          onChange={this.search}
+          onChange={this.handleChange}
         />
       </SearchWrap>
     );

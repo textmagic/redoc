@@ -79,7 +79,7 @@ export class Redoc extends React.Component<RedocProps, MainState> {
                                 <SideMenu menu={menu} onChangeActiveScreen={this.onChangeActiveScreen}/>
                             </StickyResponsiveSidebar>
                             <ApiContentWrap className="api-content">
-                              {search && search.isActive ? <SearchResultList getItemById={menu.getItemById} term={search.term} results={search.results}/> : <ContentItems items={this.state.sections as any} i={this.state.i}/>}
+                              {search && search.isActive ? <SearchResultList getItemById={menu.getItemById} term={search.term} results={search.results} onResultClick={this.onSearchResultClick}/> : <ContentItems items={this.state.sections as any} i={this.state.i}/>}
                             </ApiContentWrap>
                             <BackgroundStub/>
                         </RedocWrap>
@@ -157,14 +157,22 @@ export class Redoc extends React.Component<RedocProps, MainState> {
             this.makeVisibleItem(targetItem);
         }
 
+        this.props.store.search!.deactivate();
+        this.props.store.search!.clearResults('');
+        this.props.store.marker.unmark();
+
         if(this.props.onPageLoaded){
             this.props.onPageLoaded();
         }
-
     };
 
     onChangeActiveScreen = (id: string) => {
         this.changeActiveScreen(id);
         this.setState({i: this.state.i + 1, sections: this.state.sections});
+    };
+
+    onSearchResultClick = (id: string) => {
+      let item = this.findTargetItem(this.state.sections, id);
+      this.props.store.menu.activateAndScroll(item, true);
     }
 }

@@ -89,15 +89,15 @@ export class AppStore {
         this.search.indexItems(this.menu.items);
       }
 
-      this.disposer = observe(this.menu, 'activeItemIdx', change => {
-        this.updateMarkOnMenu(change.newValue as number);
+      this.disposer = observe(this.menu, 'activeItemIdx', () => {
+        // this.marker.mark();
       });
     }
   }
 
   onDidMount() {
     this.menu.updateOnHistory();
-    this.updateMarkOnMenu(this.menu.activeItemIdx);
+    // this.updateMarkOnMenu(this.menu.activeItemIdx);
   }
 
   dispose() {
@@ -127,27 +127,28 @@ export class AppStore {
     };
   }
 
-  private updateMarkOnMenu(idx: number) {
-    const start = Math.max(0, idx);
-    const end = Math.min(this.menu.flatItems.length, start + 5);
-
-    const elements: Element[] = [];
-    for (let i = start; i < end; i++) {
-      let elem = this.menu.getElementAt(i);
-      if (!elem) {
-        continue;
-      }
-      if (this.menu.flatItems[i].type === 'section') {
-        elem = elem.parentElement!.parentElement;
-      }
-      if (elem) {
-        elements.push(elem);
-      }
-    }
-
-    this.marker.addOnly(elements);
-    this.marker.mark();
-  }
+  // private updateMarkOnMenu(idx: number) {
+  //   const start = Math.max(0, idx);
+  //   const end = Math.min(this.menu.flatItems.length, start + 5);
+  //
+  //   const elements: Element[] = [];
+  //   for (let i = start; i < end; i++) {
+  //     let elem = this.menu.getElementAt(i);
+  //
+  //     if (!elem) {
+  //       continue;
+  //     }
+  //     // if (this.menu.flatItems[i].type === 'section') {
+  //     //   elem = elem.parentElement!.parentElement;
+  //     // }
+  //     if (elem) {
+  //       elements.push(elem);
+  //     }
+  //   }
+  //
+  //   // this.marker.addOnly(elements);
+  //   this.marker.mark();
+  // }
 }
 
 const DEFAULT_OPTIONS: RedocRawOptions = {
