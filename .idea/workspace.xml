@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81efd4da-a709-429f-a7bb-d1c21c1cccf5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/services/MarkerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/MarkerService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/SearchStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/SearchStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/SearchWorker.worker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/SearchWorker.worker.ts" afterDir="false" />
-    </list>
+    <list default="true" id="81efd4da-a709-429f-a7bb-d1c21c1cccf5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common-elements/panels.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+            <state relative-caret-position="135">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -250,17 +246,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68218000" />
+    <option name="totallyTimeSpent" value="68361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17465389" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17465389" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3009901" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3009901" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" />
@@ -718,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common-elements/panels.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+        <state relative-caret-position="135">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
