@@ -42,7 +42,6 @@ export class SearchStore<T> {
 
   @action
   activate() {
-    console.log('active');
     this.isActive = true;
   }
 

@@ -18,8 +18,6 @@ export class MarkerService {
       this.markInstance.unmark();
     }
 
-    console.log('mark');
-
     this.markInstance = new Mark(document.querySelector(".api-content") as HTMLElement);
     this.markInstance.mark(term || this.previousTerm);
 
@@ -29,8 +27,6 @@ export class MarkerService {
   }
 
   unmark() {
-    console.log('unmark');
-
     this.previousTerm = '';
 
     if(this.markInstance){

@@ -84,7 +84,6 @@ export async function search<Meta = string>(
       .split(/\s+/)
       .forEach(term => {
         const exp = expandTerm(term);
-        console.log(exp);
         t.term(exp, {});
       });
   });
