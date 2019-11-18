@@ -57,7 +57,7 @@ export class SearchStore<T> {
         return item.replace(/```([\s\S.]*)```/g, '');
       },
       (item: string) => {
-        return item.replace(/<[^>]*>?/gm, '');
+        return item.replace(/(<([^>]+)>)/ig, '');
       },
       (item: string) => {
         return item.replace(/###/g, '');

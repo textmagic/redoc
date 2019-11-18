@@ -24,7 +24,7 @@ export interface RedocProps {
 interface MainState {
     i: number;
     sections: IMenuItem[];
-    searchMode: true
+    searchMode: true;
 }
 
 @observer

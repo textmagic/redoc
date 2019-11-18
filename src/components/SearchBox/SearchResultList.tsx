@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {SearchResult} from "../../services/SearchWorker.worker";
 import {IMenuItem} from "../../services";
-import {H1, H3, MiddlePanel, Row, Section} from "../../common-elements";
+import {H1, H3, MiddlePanel, Row, SearchResultItemContainer, Section} from '../../common-elements';
 import {AdvancedMarkdown} from "../Markdown/AdvancedMarkdown";
 
 
@@ -29,12 +29,32 @@ function trunc(str, n) {
 
 const middlePanelWrap = component => <MiddlePanel compact={true}>{component}</MiddlePanel>;
 
+const beforeRenderDescriptionFilters = () => {
+    return [
+        (item: string) => {
+            return item.replace(/(<([^>]+)>)/ig, '');
+        },
+        (item: string) => {
+            return item.replace('Try in sandbox', '');
+        },
+    ];
+};
+
 export class SearchResultItem extends React.PureComponent<SearchResultItemProps> {
   render() {
     const {item} = this.props;
 
+    let description = item.description ? item.description : '';
+    beforeRenderDescriptionFilters().forEach(filter => {
+        description = filter(description);
+    });
+
+    if(item.type === 'operation' && !description.length){
+        description = 'API endpoint documentation';
+    }
+
     return (
-      <>
+      <SearchResultItemContainer>
         <Row>
           <MiddlePanel compact={false}>
             <H3>
@@ -45,8 +65,8 @@ export class SearchResultItem extends React.PureComponent<SearchResultItemProps>
             </H3>
           </MiddlePanel>
         </Row>
-        <AdvancedMarkdown source={item.description ? trunc(item.description, 500) : ''} htmlWrap={middlePanelWrap}/>
-      </>
+        <AdvancedMarkdown source={trunc(description, 300)} htmlWrap={middlePanelWrap}/>
+      </SearchResultItemContainer>
     );
   }
 }

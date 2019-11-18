@@ -1,6 +1,21 @@
 import { SECTION_ATTR } from '../services/MenuStore';
 import styled, { media } from '../styled-components';
 
+export const SearchResultItemContainer = styled.div<{ compact?: boolean }>`
+  width: 100%;
+  padding-bottom: 20px;
+  & > div:last-child {
+    border-bottom: 1px solid #e6f2f8;
+    padding-bottom: 20px;
+  }
+  & h2 > a:visited {
+    color: #32329f;
+  }
+  & h2 > a {
+    color: #32329f;
+  }
+`;
+
 export const MiddlePanel = styled.div<{ compact?: boolean }>`
   width: calc(100% - ${props => props.theme.rightPanel.width});
   padding: 0 ${props => props.theme.spacing.sectionHorizontal}px;
