@@ -9,10 +9,10 @@ export const SearchResultItemContainer = styled.div<{ compact?: boolean }>`
     padding-bottom: 20px;
   }
   & h2 > a:visited {
-    color: #32329f;
+    color: #025d86;
   }
   & h2 > a {
-    color: #32329f;
+    color: #025d86;
   }
 `;
 

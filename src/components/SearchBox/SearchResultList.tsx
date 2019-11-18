@@ -102,7 +102,8 @@ export class SearchResultList extends React.PureComponent<SearchResultListProps>
     return (
       <MiddlePanel>
         <Section>
-          No results found
+            <br/>
+            We could not find any results with this keyword. Please try using a different search keyword.
         </Section>
       </MiddlePanel>
     );
